@@ -1,3 +1,11 @@
+---
+title: GardenMind AI — Grow Smarter, Care Naturally with Local Vision AI
+published: false
+description: An open-source botanical companion featuring local on-device computer vision to diagnose plant health, track growth milestones, and touch grass.
+tags: devchallenge, hf26challenge, opensource, ai
+cover_image: https://raw.githubusercontent.com/akshay118R/Garden-Mind-AI/main/docs/devpost-assets/cover-image.jpg
+---
+
 *This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass](https://dev.to/challenges/hacktoberfest-week1-2026-10-05)*
 
 ---
