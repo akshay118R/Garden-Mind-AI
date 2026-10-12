@@ -1,0 +1,40 @@
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+tsconfig.tsbuildinfo
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+backend/.venv/
+.pytest_cache/
+
+# Local databases & uploads
+*.db
+*.sqlite
+*.sqlite3
+backend/data/
+backend/test_gardenmind.db
+backend/test_uploads/
+test_gardenmind.db
+test_uploads/
+
+# Environment variables
+.env
+.env.production
+.env.*.local
+backend/.env
+backend/.env.*
+
+# Temporary artifacts & logs
+scratch/
+*.log
+
+# Editor & Agent configurations
+.agents/
+.vscode/
+.idea/

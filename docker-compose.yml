@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gardenmind-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PROJECT_NAME=GardenMind AI Backend
+      - DATABASE_URL=sqlite:///./data/gardenmind.db
+      - UPLOAD_DIR=./data/uploads
+      - MAX_UPLOAD_SIZE_BYTES=10485760
+      - BACKEND_CORS_ORIGINS=["http://localhost:5173","http://127.0.0.1:5173","http://localhost:3000","http://localhost"]
+      - MODEL_DIR=./models
+      - AI_MODEL_PATH=./models/plant_disease_mobilenet_v2.onnx
+      - AI_MODEL_CONFIG_PATH=./models/config.json
+      - AI_PROVIDER_TYPE=onnx
+    volumes:
+      # Persistent volume for SQLite database and uploaded photos
+      - ./backend/data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
